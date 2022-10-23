@@ -1,0 +1,225 @@
+/*
+ colors used
+
+ Text color (Dark Gray): #2b2b2b
+ Primary Color (Purple: #357b70)
+ Secondary Color (Orange):#e0b354
+ */
+:root {
+  --primary-color: #357b70;
+  --secondary-color: #e0b354;
+  --dark-grey: #2b2b2b;
+  --light-grey: lightgrey;
+  --white: #fff;
+  --button-scondary: #2b2b2b;
+  --secondary-button-background: #e0b354;
+  --visited-link: #05676e;
+  --active-link: #489c79;
+  --primary-font-weight: 700;
+  --sun-stage-0: #edc655;
+  --sun-stage-50: #fcffad;
+  --sun-stage-100: #f76414;
+  --ten-pixel: 10px;
+  --twenty-pixel: 20px;
+}
+body {
+  font-family: "lato", sans-serif;
+  font-weight: 400px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: var(--primary-font-weight);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: var(--primary-font-weight);
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: var(--primary-font-weight);
+}
+a {
+  color: var(--primary-color);
+}
+
+a:visited {
+  text-color: var(--visited-link);
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:active {
+  color: var(--active-link);
+}
+
+button,
+.button {
+  border: none;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  padding: var(--ten-pixel);
+  border-radius: var(--ten-pixel);
+  border-bottom: 2px solid rgba (0, 0, 0, 0.3);
+  transition: 0.2s opacity;
+}
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  cursor: pointer;
+  opacity: 0.8;
+  border-radius: var(--ten-pixel);
+}
+
+.button__secondary {
+  background-color: var(--secondary-button-background);
+  color: var(--button-scondary);
+}
+.navigation-list__item--active {
+  text-decoration: none;
+}
+.profile__portrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+* {
+  box-sizing: border-box;
+  font-size: var(--twenty-pixel);
+  font-weight: bold;
+}
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: var(--twenty-pixel);
+  border-bottom: 1px solid black;
+}
+.page-header__item {
+  flex: 0 1 200px;
+  margin: 0 auto;
+}
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+.navigation-list {
+  list-style-type: none;
+}
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+.grid__item {
+  background-color: var(--light-grey);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: var(--twenty-pixel);
+  margin-left: var(--ten-pixel);
+  margin-right: var(--ten-pixel);
+}
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* If a smaller screen with a higher resolution is not allowing the table to minimize any further putting a higher pixel count will allow grid to translate to single column */
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: var(--ten-pixel);
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+.experience,
+.download-button {
+  margin: 0 auto;
+  text-align: center;
+}
+.download-button {
+  padding: var(--twenty-pixel);
+}
+.experience {
+  font-size: var(--twenty-pixel);
+  font-weight: bold;
+}
+.header1__about {
+  text-align: center;
+}
+@keyframes color-change {
+  0% {
+    fill: var(--sun-stage-0);
+  }
+  50% {
+    fill: var(--sun-stage-50);
+  }
+  100% {
+    fill: var(--sun-stage-100);
+  }
+}
+.sun {
+  animation-duration: 4s;
+  animation-name: color-change;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+@keyframes cloud-move {
+  from {
+    transform: translate (0, 50px);
+  }
+  to {
+    transform: translate (200px, 50px);
+  }
+}
+.cloud-front {
+  animation-duration: 30s;
+  animation-name: cloud-move;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+.cloud-back {
+  animation: 30s cloud-move-reverse infinite alternate linear;
+}
+/* I'm making a comment, for the sake of making a comment*/
