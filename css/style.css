@@ -48,7 +48,7 @@ a {
 }
 
 a:visited {
-  text-color: var(--visited-link);
+  color: var(--visited-link);
 }
 
 a:hover,
